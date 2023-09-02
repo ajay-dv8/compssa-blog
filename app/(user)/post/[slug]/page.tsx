@@ -6,7 +6,7 @@ import user from '../../../../public/user.svg'
 import { Category } from '@/typings';
 import { PortableText } from '@portabletext/react';
 import { RichTextComponents } from '@/components/richTextComponent';
-//import { client } from '@/sanity/lib/client';
+
 
 type Props = {
     params: {
@@ -20,13 +20,13 @@ type Props = {
 /*this is to builld static pages to speed up the app*/
 /*like the blog pages are built at build time or when the app is started*/
 
-/*  SSR
+/* SSG 
 export async function generateStaticParams() {
   const query = groq`
   *[_type=='post']
   { slug } `;
 
-  const slugs = await client.fetch(query);
+  const slugs = await getClient.fetch(query);
   const slugRoutes = slugs.map((slug: any) => slug.slug.current); 
 
   return slugRoutes.map((slug: any) => ({
@@ -34,6 +34,7 @@ export async function generateStaticParams() {
   }));
 }
 */
+
 async function Post({ params: { slug  } }: Props) {
   const query = groq`
     *[_type=='post' && slug.current == $slug][0]
@@ -48,7 +49,7 @@ async function Post({ params: { slug  } }: Props) {
 {post.description}
   return (
     <article className='px-10 pb-28'>
-      <section className=' space-x-2 border-[#f7ab0a] text-white'>
+      <section className=' space-x-2 border-[#0179a8] text-white'>
         <div className='relative min-h-56 flex flec-col md:flex-row justify-between'>
           <div className='absolute top-0 w-full h-full opacity-10 p-10 blur-sm'>
             <Image
@@ -59,7 +60,7 @@ async function Post({ params: { slug  } }: Props) {
             />
           </div>
 
-          <section className='p-5 bg-[#f7ab0a] w-full'>
+          <section className='p-5 bg-[#3b7ddd] w-full'>
             <div className='flex flex-col md:flex-row gap-y-5 justify-between'>
               <div>
                 <h1 className='text-4xl font-extrabold'>

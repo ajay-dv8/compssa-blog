@@ -15,7 +15,7 @@ export default function PreviewBlogList({data: initialData}: previewDocType) {
   if (loading) {
     return (
       <>
-        <p className="text-center text-lg animate-pulse text-[#f7ab0a]">
+        <p className="text-center text-lg animate-pulse text-[#0179a8]">
           Loading preview data...
         </p>
       </>

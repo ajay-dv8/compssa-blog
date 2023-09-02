@@ -14,11 +14,14 @@ const BlogList = ({post}: any) => {
   
   return (
     <div>
-      <hr className="mb-10 border-[#f7ab0a]" />
+      <hr className="mb-10 border-[#0179a8]" />
 
       <div className='grid grid-cols-1 md:grid-cols-2 px-10 gap-10 pb-24 gap-y-20'>
         {/**POSTS*/}
-        {post.map((post: { slug: { current: any; }; _id: Key | null | undefined; mainImage: SanityImageSource; author: { name: any; }; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | PromiseLikeOfReactNode | null | undefined; _createdAt: string | number | Date; categories: Category[]; body: { children: { text: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; }[]; }[]; }) => (        
+        {post.map((post: { slug: { current: any; }; 
+        _id: Key | null | undefined; mainImage: SanityImageSource; author: { name: any; }; 
+        title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | PromiseLikeOfReactNode | null | undefined; _createdAt: string | number | Date; categories: Category[]; body: { children: { text: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; }[]; }[]; 
+      }) => (        
       
       <ClientPostRoute route={`/post/${post.slug?.current}`} key={post._id}>
 

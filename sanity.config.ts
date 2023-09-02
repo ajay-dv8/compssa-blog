@@ -2,8 +2,6 @@
 
 
 
-
-
 import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'

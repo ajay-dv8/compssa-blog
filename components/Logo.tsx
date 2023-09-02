@@ -1,12 +1,12 @@
 import Image from "next/image";
-import next from '../public/next.svg'
+import logo from '../public/logo.png'
 
 const Logo = (props: any) => {
     const { renderDefault, title} = props;
   return (
     <div className="flex items-center space-x-2">
 			<Image 
-				src={next}
+				src={logo}
 				alt="logo"
 				width={50}
 				height={50}

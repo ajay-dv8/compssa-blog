@@ -4,18 +4,15 @@ import { getClient } from "@/lib/sanity.client";
 import PreviewProvider from "../../components/previewProvider";
 import BlogList from "@/components/BlogList";
 
-
 //import PreviewDocumentsCount from "@/components/PreviewDocumentsCount";
 //import { client } from "@/sanity/lib/client";
-
 
 export const query = groq`
   *[_type=='post'] {
     ...,
     author->,
     categories[]->
-  } | order(_creaedAt desc)
-`;
+  } | order(_creaedAt desc)`;
 
 /* rerender every 2mins */
 /* REMOVE COMMENT ON PROD BUILD */
@@ -26,7 +23,7 @@ export default async function HomePage() {
 
   if (preview) {
     return (
-      <PreviewProvider  token={""}>
+      <PreviewProvider token={""}>
 
       {/** preview blog list
       <PreviewDocumentsCount data={''}/>
@@ -36,7 +33,6 @@ export default async function HomePage() {
   }
 
   const posts = await getClient.fetch(query);
-  //console.log(post);
   return (
     <>
     <BlogList post={posts}/>
